@@ -1,0 +1,62 @@
+<div ng-controller="HomeCtrl">
+    
+    <md-toolbar class="md-warn">
+    <div class="md-toolbar-tools">
+      <h2 class="md-flex">News Feed Live - {{newsSource}}</h2>
+    </div>
+
+    
+  </md-toolbar>
+  
+
+    <md-content class="md-padding">
+
+        <md-button ng-click="openDialog($event)" class="md-raised">Open Dialog</md-button>
+
+        <div id="slides_control">
+            <ul class="rslides" id="headLines">
+                <li ng-repeat="row in headLines" ng-click="showDescription(row)">
+                    <img ng-src="{{row.urlToImage}}" alt="{{row.title}}">
+                    <p class="caption">{{row.title}} - {{row.publishedAt}}</p>
+                </li>
+            </ul>
+
+            <md-subheader class="md-no-sticky">News Feeds</md-subheader>
+            <md-divider></md-divider>
+            
+            <md-card ng-repeat="row in headLines">
+                <img ng-src="{{row.urlToImage}}" class="md-card-image" alt="{{row.title}}">
+                <md-card-title>
+                <md-card-title-text>
+                    <span class="md-headline">{{row.title}} - {{row.publishedAt}}</span>
+                </md-card-title-text>
+                </md-card-title>
+                <md-card-content>
+                <p>
+                    {{row.description}} 
+                </p>
+                </md-card-content>
+                    <md-card-actions layout="row" layout-align="end center">
+                <md-button class="md-icon-button" aria-label="Favorite">
+                    <md-icon> <i class="material-icons">favorite</i></md-icon>
+                </md-button>
+                <md-button class="md-icon-button" aria-label="Settings" ng-click="showDescription(row)">
+                    <md-icon><i class="material-icons">near_me</i></md-icon>
+                </md-button>
+                </md-card-actions>
+            </md-card>
+
+
+            <!--<md-list-item class="md-3-line md-long-text" ng-repeat="row in headLines">
+                <img ng-src="{{row.urlToImage}}" class="md-avatar" alt="{{row.title}}" />
+                <div class="md-list-item-text">
+                    <h3>{{row.title}} - {{row.publishedAt}}}</h3>
+                    <p>{{row.description}} 
+                    
+                    </p>
+                </div>
+                <md-divider></md-divider>
+            </md-list-item>-->
+        </div>
+    </md-content>
+</div>

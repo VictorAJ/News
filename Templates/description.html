@@ -1,0 +1,24 @@
+<div ng-controller="DescCtrl">
+    <md-card>
+        <img ng-src="{{news.urlToImage}}" class="md-card-image" alt="{{news.title}}">
+        <md-card-title>
+        <md-card-title-text>
+            <span class="md-headline">{{news.title}} - {{news.publishedAt}}</span>
+        </md-card-title-text>
+        </md-card-title>
+        <md-card-content>
+        <p>
+            {{news.description}} 
+        </p>
+        </md-card-content>
+            <md-card-actions layout="row" layout-align="end center">
+        <md-button class="md-icon-button" aria-label="Favorite">
+            <md-icon> <i class="material-icons">favorite</i></md-icon>
+        </md-button>
+        <md-button class="md-icon-button" aria-label="Settings" ng-href="home">
+            <md-icon><i class="material-icons">keyboard_backspace</i></md-icon>
+        </md-button>
+        </md-card-actions>
+    </md-card>
+
+</div>
